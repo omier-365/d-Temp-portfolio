@@ -76,17 +76,23 @@ export function IntroAnimation({ children }: { children: React.ReactNode }) {
 
                 {/* Logo image */}
                 <motion.div
-                  className="relative w-44 h-44 md:w-56 md:h-56"
+                  className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
+                  style={{
+                    background: "transparent",
+                  }}
                 >
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
                     fill
-                    className="object-contain drop-shadow-2xl"
+                    className="object-contain drop-shadow-2xl scale-110"
                     priority
+                    style={{
+                      mixBlendMode: "lighten",
+                    }}
                   />
                   
                   {/* Eye glow effect overlay */}
