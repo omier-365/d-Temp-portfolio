@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -16,8 +17,15 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold text-foreground">
-          <span className="text-primary">Dev</span>Portfolio
+        <a href="/" className="text-xl font-bold text-foreground flex items-center gap-2">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
+          <span className="text-primary">Omier</span> Ahmed
         </a>
 
         {/* Desktop Navigation */}

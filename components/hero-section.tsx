@@ -21,9 +21,9 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="mb-8 flex justify-center"
+          className="mb-6 flex flex-col items-center justify-center"
         >
-          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow">
+          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow mb-4">
             <Image
               src="/images/profile.png"
               alt="Profile picture"
@@ -32,6 +32,9 @@ export function HeroSection() {
               priority
             />
           </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+            <span className="text-primary">Omier</span> Ahmed
+          </h2>
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
