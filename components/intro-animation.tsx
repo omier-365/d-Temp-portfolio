@@ -116,21 +116,32 @@ export function IntroAnimation({ children }: { children: React.ReactNode }) {
                 transition={{ duration: 0.6, delay: 1 }}
               >
                 <motion.h1
-                  className="text-2xl md:text-3xl font-bold tracking-wider"
+                  className="text-3xl md:text-4xl font-bold tracking-wider mb-2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2 }}
                 >
+                  <span className="text-white">
+                    Omier Ahmed
+                  </span>
+                </motion.h1>
+
+                <motion.h2
+                  className="text-xl md:text-2xl font-medium tracking-wider"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.4 }}
+                >
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
                     Graphic Designer
                   </span>
-                </motion.h1>
+                </motion.h2>
 
                 <motion.p
                   className="text-gray-400 mt-2 text-sm md:text-base tracking-widest uppercase"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.5 }}
+                  transition={{ delay: 1.7 }}
                 >
                   Precision & Creativity
                 </motion.p>
