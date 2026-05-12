@@ -1,29 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Database, Layout, Smartphone } from "lucide-react"
+import { Palette, Lightbulb, Sparkles, Heart } from "lucide-react"
 import Image from "next/image"
 
 const skills = [
   {
-    icon: Layout,
-    title: "Frontend Development",
-    description: "Building responsive and interactive UIs with React, Next.js, and Tailwind CSS",
+    icon: Palette,
+    title: "تصميم جرافيك",
+    description: "إنشاء تصاميم عصرية وجذابة تلفت الانتباه وتترك انطباع قوي",
   },
   {
-    icon: Database,
-    title: "Backend Development",
-    description: "Creating robust APIs and services with Node.js, Python, and databases",
+    icon: Lightbulb,
+    title: "إبداع وابتكار",
+    description: "دمج الأفكار الإبداعية مع البساطة للحصول على نتائج مميزة",
   },
   {
-    icon: Smartphone,
-    title: "Mobile-First Design",
-    description: "Ensuring seamless experiences across all devices and screen sizes",
+    icon: Sparkles,
+    title: "احترافية عالية",
+    description: "الاهتمام بكل تفصيلة لإخراج عمل احترافي ومتقن",
   },
   {
-    icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable, and well-documented code",
+    icon: Heart,
+    title: "شغف بالعمل",
+    description: "حب التصميم والسعي الدائم للتطور والتميز",
   },
 ]
 
@@ -39,7 +39,7 @@ export function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="text-primary">Me</span>
+            نبذة <span className="text-primary">عني</span>
           </h2>
         </motion.div>
 
@@ -69,14 +69,17 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-right"
+            dir="rtl"
           >
+            <p className="text-xl text-foreground leading-relaxed mb-6">
+              نورت البورتفوليو عميلي العزيز <span className="text-red-500">❤️</span> احب اعرفك بنفسي
+            </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I&apos;m a passionate developer with experience in building full-stack web applications.
-              I love solving complex problems and creating intuitive user experiences.
+              انا <span className="text-primary font-bold">Graphic Designer</span> عندي 16 سنة، شغوف بصناعة تصاميم عصرية تلفت الانتباه وتسيب انطباع قوي.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              With a strong foundation in modern web technologies, I specialize in creating 
-              responsive, performant, and accessible applications that make a real impact.
+              بحب الدمج بين الإبداع والبساطة علشان أطلع شغل يبان احترافي ومميز في كل تفصيلة.
             </p>
           </motion.div>
         </div>
