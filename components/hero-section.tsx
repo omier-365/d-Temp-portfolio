@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -15,6 +16,23 @@ export function HeroSection() {
         transition={{ duration: 0.6 }}
         className="text-center max-w-4xl relative z-10"
       >
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow">
+            <Image
+              src="/images/profile.png"
+              alt="Profile picture"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
