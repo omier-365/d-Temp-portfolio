@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 export function IntroAnimation({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
@@ -9,7 +10,7 @@ export function IntroAnimation({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2800)
+    }, 3500)
 
     return () => clearTimeout(timer)
   }, [])
@@ -20,96 +21,128 @@ export function IntroAnimation({ children }: { children: React.ReactNode }) {
         {isLoading && (
           <motion.div
             key="intro"
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <div className="relative flex flex-col items-center">
-              {/* Animated circles background */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  className="absolute w-40 h-40 rounded-full border border-primary/20"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: [0, 2, 2.5], opacity: [0, 0.5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-                />
-                <motion.div
-                  className="absolute w-40 h-40 rounded-full border border-primary/30"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: [0, 1.5, 2], opacity: [0, 0.5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
-                />
-              </div>
-
-              {/* Logo/Name animation */}
+              {/* Outer glow ring */}
               <motion.div
-                className="relative z-10 text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                {/* Animated icon */}
-                <motion.div
-                  className="mb-6 mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center"
-                  initial={{ rotate: -180, scale: 0 }}
-                  animate={{ rotate: 0, scale: 1 }}
-                  transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-                >
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-primary-foreground"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.5, delay: 0.5 }}
-                  >
-                    <path d="M12 19l7-7 3 3-7 7-3-3z" />
-                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-                    <path d="M2 2l7.586 7.586" />
-                    <circle cx="11" cy="11" r="2" />
-                  </motion.svg>
-                </motion.div>
+                className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%)",
+                }}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: [0, 1.2, 1], opacity: [0, 0.8, 0.6] }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
 
-                {/* Text animation */}
-                <motion.h1
-                  className="text-3xl md:text-4xl font-bold"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
+              {/* Pulsing rings */}
+              <motion.div
+                className="absolute w-52 h-52 md:w-72 md:h-72 rounded-full border-2 border-blue-500/30"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: [0.8, 1.3, 1.5], opacity: [0, 0.5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+              />
+              <motion.div
+                className="absolute w-52 h-52 md:w-72 md:h-72 rounded-full border border-blue-400/20"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: [0.8, 1.2, 1.4], opacity: [0, 0.4, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.3 }}
+              />
+
+              {/* Logo container */}
+              <motion.div
+                className="relative z-10"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ 
+                  duration: 1.2, 
+                  type: "spring", 
+                  stiffness: 80,
+                  damping: 12
+                }}
+              >
+                {/* Glow behind logo */}
+                <motion.div
+                  className="absolute inset-0 blur-2xl"
+                  style={{
+                    background: "radial-gradient(circle, rgba(59,130,246,0.6) 0%, transparent 60%)",
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [0, 1, 0.7, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* Logo image */}
+                <motion.div
+                  className="relative w-44 h-44 md:w-56 md:h-56"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  <span className="text-primary">Graphic</span> Designer
+                  <Image
+                    src="/images/logo.png"
+                    alt="Logo"
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                    priority
+                  />
+                  
+                  {/* Eye glow effect overlay */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: "radial-gradient(ellipse 15% 8% at 38% 52%, rgba(59,130,246,0.8) 0%, transparent 100%), radial-gradient(ellipse 15% 8% at 62% 52%, rgba(59,130,246,0.8) 0%, transparent 100%)",
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0.5, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                  />
+                </motion.div>
+              </motion.div>
+
+              {/* Text animation */}
+              <motion.div
+                className="mt-8 text-center relative z-10"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+              >
+                <motion.h1
+                  className="text-2xl md:text-3xl font-bold tracking-wider"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2 }}
+                >
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                    Graphic Designer
+                  </span>
                 </motion.h1>
 
                 <motion.p
-                  className="text-muted-foreground mt-2 text-lg"
+                  className="text-gray-400 mt-2 text-sm md:text-base tracking-widest uppercase"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
+                  transition={{ delay: 1.5 }}
                 >
-                  Creating Visual Magic
+                  Precision & Creativity
                 </motion.p>
+              </motion.div>
 
-                {/* Loading bar */}
+              {/* Loading bar */}
+              <motion.div
+                className="mt-10 w-48 md:w-64 h-1 bg-gray-800 rounded-full overflow-hidden relative z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.8 }}
+              >
                 <motion.div
-                  className="mt-8 w-48 h-1 bg-muted rounded-full overflow-hidden mx-auto"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1 }}
-                >
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-primary to-primary/50 rounded-full"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 1.5, delay: 1, ease: "easeInOut" }}
-                  />
-                </motion.div>
+                  className="h-full bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 rounded-full"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1.5, delay: 1.8, ease: "easeInOut" }}
+                />
               </motion.div>
             </div>
           </motion.div>
