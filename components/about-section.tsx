@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Code2, Database, Layout, Smartphone } from "lucide-react"
+import Image from "next/image"
 
 const skills = [
   {
@@ -40,11 +41,45 @@ export function AboutSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About <span className="text-primary">Me</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            I&apos;m a passionate developer with experience in building full-stack web applications.
-            I love solving complex problems and creating intuitive user experiences.
-          </p>
         </motion.div>
+
+        {/* About content with image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="relative w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-primary/20">
+              <Image
+                src="/images/profile.png"
+                alt="Profile picture"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Decorative elements */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/30 rounded-2xl -z-10" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              I&apos;m a passionate developer with experience in building full-stack web applications.
+              I love solving complex problems and creating intuitive user experiences.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              With a strong foundation in modern web technologies, I specialize in creating 
+              responsive, performant, and accessible applications that make a real impact.
+            </p>
+          </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((skill, index) => (
