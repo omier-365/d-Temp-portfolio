@@ -9,7 +9,7 @@ const projects = [
     title: "Teachers Designs",
     description: "Professional teacher profile designs with modern styling and creative layouts. Perfect for educational professionals.",
     tech: ["Design", "UI/UX", "Professional"],
-    image: "/projects/teachers-designs.jpg",
+    image: "/projects/teachers-designs.png",
     behance: "https://www.behance.net/89e5bf1f",
     isDesign: true,
   },
