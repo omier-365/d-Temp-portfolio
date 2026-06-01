@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Mail, MessageCircle, Briefcase, Send } from "lucide-react"
-import { useState, useEffect } from "react"
-import emailjs from "@emailjs/browser"
+import { useState } from "react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,37 +14,35 @@ export function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("")
 
-  // تهيئة EmailJS عند تحميل الصفحة
-  useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY_HERE") // سنضيف المفتاح لاحقاً
-  }, [])
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
 
     try {
-      // إرسال الرسالة عبر EmailJS
-      const response = await emailjs.send(
-        "YOUR_SERVICE_ID_HERE", // سيتم إضافته
-        "YOUR_TEMPLATE_ID_HERE", // سيتم إضافته
-        {
-          to_email: "myrahmd860@gmail.com",
-          from_name: formData.name,
-          from_email: formData.email,
+      // إرسال الرسالة عبر Formspree
+      const response = await fetch("https://formspree.io/f/xredwaaz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-        }
-      )
+        }),
+      })
 
-      if (response.status === 200) {
+      if (response.ok) {
         setSubmitted(true)
         setFormData({ name: "", email: "", message: "" })
         
         setTimeout(() => setSubmitted(false), 3000)
+      } else {
+        setError("حدث خطأ في إرسال الرسالة. حاول مرة أخرى.")
       }
     } catch (err) {
-      setError("حدث خطأ في إرسال الرسالة. حاول مرة أخرى.")
+      setError("حدث خطأ في الاتصال. تأكد من اتصالك بالإنترنت.")
       console.error("Email send error:", err)
     } finally {
       setIsSubmitting(false)
@@ -140,6 +137,7 @@ export function ContactSection() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -155,6 +153,7 @@ export function ContactSection() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -169,6 +168,7 @@ export function ContactSection() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 required
                 rows={4}
                 value={formData.message}
