@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, MapPin, Send } from "lucide-react"
+import { Mail, MessageCircle, Briefcase, Send } from "lucide-react"
 import { useState } from "react"
 
 export function ContactSection() {
@@ -55,25 +55,48 @@ export function ContactSection() {
             <h3 className="text-xl font-semibold mb-6 text-foreground">Contact Info</h3>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+              <a 
+                href="mailto:myrahmd85@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-lg bg-card/50 hover:bg-card hover:border-primary/50 border border-border transition-all group"
+              >
+                <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground">hello@example.com</p>
+                  <p className="text-foreground font-medium">myrahmd85@gmail.com</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <MapPin className="w-5 h-5 text-primary" />
+              <a 
+                href="https://wa.me/201022639193"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-card/50 hover:bg-card hover:border-primary/50 border border-border transition-all group"
+              >
+                <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <MessageCircle className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-foreground">Remote / Worldwide</p>
+                  <p className="text-sm text-muted-foreground">WhatsApp</p>
+                  <p className="text-foreground font-medium">+20 102 263 9193</p>
                 </div>
-              </div>
+              </a>
+              
+              <a 
+                href="https://www.behance.net/89e5bf1f"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg bg-card/50 hover:bg-card hover:border-primary/50 border border-border transition-all group"
+              >
+                <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Behance Portfolio</p>
+                  <p className="text-foreground font-medium">View My Work</p>
+                </div>
+              </a>
             </div>
           </motion.div>
 
