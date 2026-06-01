@@ -1,9 +1,18 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 const projects = [
+  {
+    title: "Teachers Designs",
+    description: "Professional teacher profile designs with modern styling and creative layouts. Perfect for educational professionals.",
+    tech: ["Design", "UI/UX", "Professional"],
+    image: "/projects/teachers-designs.jpg",
+    behance: "https://www.behance.net/89e5bf1f",
+    isDesign: true,
+  },
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
@@ -49,7 +58,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -59,8 +68,17 @@ export function ProjectsSection() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="bg-card rounded-xl border border-border overflow-hidden group hover:border-primary/50 transition-all"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <span className="text-4xl font-bold text-primary/30">{index + 1}</span>
+              <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <span className="text-4xl font-bold text-primary/30">{index + 1}</span>
+                )}
               </div>
               
               <div className="p-6">
@@ -79,24 +97,38 @@ export function ProjectsSection() {
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Demo
-                  </a>
+                  {project.isDesign && project.behance ? (
+                    <a
+                      href={project.behance}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      View on Behance
+                    </a>
+                  ) : (
+                    <>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Code
+                      </a>
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>
