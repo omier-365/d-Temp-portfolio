@@ -33,59 +33,55 @@ export function HeroSection() {
             />
           </div>
         </motion.div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-primary font-medium mb-4"
-        >
-          Hello, I&apos;m
-        </motion.p>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-5xl md:text-7xl font-black mb-6 text-balance"
+          transition={{ delay: 0.2 }}
+          className="text-4xl md:text-5xl font-bold mb-8 text-balance"
         >
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Designer
-          </span>
+          <span className="text-primary">مرحبا عميلي العزيز</span>
+          <span className="ml-3 inline-block">❤️</span>
         </motion.h1>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-muted-foreground text-lg md:text-xl mb-8 max-w-2xl mx-auto text-pretty"
-        >
-          I create stunning visual designs and modern experiences. Passionate about turning creative ideas into reality.
-        </motion.p>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.3 }}
+          className="space-y-4 mb-8"
+        >
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            احب تحويل افكار عملائي الى مشاريع موجودة على ارض الواقع
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            سايبلك نموذج التواصل تحت 👇
+          </p>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <a
             href="#projects"
             className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-all hover:shadow-glow"
           >
-            View My Work
+            عرض أعمالي
           </a>
           <a
             href="#contact"
             className="px-8 py-3 border border-border hover:border-primary text-foreground font-medium rounded-lg transition-all"
           >
-            Get In Touch
+            تواصل معي
           </a>
         </motion.div>
         
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.5 }}
           className="flex items-center justify-center gap-6"
         >
           <a
@@ -127,7 +123,7 @@ export function HeroSection() {
           className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
           aria-label="Scroll down"
         >
-          <span className="text-sm mb-2">Scroll</span>
+          <span className="text-sm mb-2">اسحب لأسفل</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
