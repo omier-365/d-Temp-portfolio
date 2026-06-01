@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Mail, MessageCircle, Briefcase, Send } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import emailjs from "@emailjs/browser"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,19 +13,43 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
+
+  // تهيئة EmailJS عند تحميل الصفحة
+  useEffect(() => {
+    emailjs.init("YOUR_PUBLIC_KEY_HERE") // سنضيف المفتاح لاحقاً
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
-    
-    setTimeout(() => setSubmitted(false), 3000)
+    setError("")
+
+    try {
+      // إرسال الرسالة عبر EmailJS
+      const response = await emailjs.send(
+        "YOUR_SERVICE_ID_HERE", // سيتم إضافته
+        "YOUR_TEMPLATE_ID_HERE", // سيتم إضافته
+        {
+          to_email: "myrahmd85@gmail.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      )
+
+      if (response.status === 200) {
+        setSubmitted(true)
+        setFormData({ name: "", email: "", message: "" })
+        
+        setTimeout(() => setSubmitted(false), 3000)
+      }
+    } catch (err) {
+      setError("حدث خطأ في إرسال الرسالة. حاول مرة أخرى.")
+      console.error("Email send error:", err)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -152,6 +177,12 @@ export function ContactSection() {
                 placeholder="Your message..."
               />
             </div>
+
+            {error && (
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600 text-sm">
+                {error}
+              </div>
+            )}
             
             <button
               type="submit"
@@ -161,7 +192,7 @@ export function ContactSection() {
               {isSubmitting ? (
                 "Sending..."
               ) : submitted ? (
-                "Message Sent!"
+                "Message Sent! ✓"
               ) : (
                 <>
                   <Send className="w-4 h-4" />
