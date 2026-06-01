@@ -31,7 +31,7 @@ export function ContactSection() {
         "YOUR_SERVICE_ID_HERE", // سيتم إضافته
         "YOUR_TEMPLATE_ID_HERE", // سيتم إضافته
         {
-          to_email: "myrahmd85@gmail.com",
+          to_email: "myrahmd860@gmail.com",
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
@@ -81,7 +81,7 @@ export function ContactSection() {
             
             <div className="space-y-4">
               <a 
-                href="mailto:myrahmd85@gmail.com"
+                href="mailto:myrahmd860@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-lg bg-card/50 hover:bg-card hover:border-primary/50 border border-border transition-all group"
               >
                 <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -89,7 +89,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground font-medium">myrahmd85@gmail.com</p>
+                  <p className="text-foreground font-medium">myrahmd860@gmail.com</p>
                 </div>
               </a>
               
