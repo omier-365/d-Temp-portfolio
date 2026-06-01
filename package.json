@@ -16,7 +16,8 @@
     "zod": "^3.23.8",
     "lucide-react": "^0.460.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "@emailjs/browser": "^4.2.0"
   },
   "devDependencies": {
     "typescript": "^5",
