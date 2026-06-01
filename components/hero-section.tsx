@@ -46,11 +46,10 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-5xl md:text-7xl font-bold mb-6 text-balance"
+          className="text-5xl md:text-7xl font-black mb-6 text-balance"
         >
-          <span className="text-foreground">Full-Stack</span>{" "}
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Developer
+            Designer
           </span>
         </motion.h1>
         
@@ -60,8 +59,7 @@ export function HeroSection() {
           transition={{ delay: 0.4 }}
           className="text-muted-foreground text-lg md:text-xl mb-8 max-w-2xl mx-auto text-pretty"
         >
-          I build modern, responsive web applications with clean code and great user experiences. 
-          Passionate about turning ideas into reality.
+          I create stunning visual designs and modern experiences. Passionate about turning creative ideas into reality.
         </motion.p>
         
         <motion.div
@@ -109,7 +107,7 @@ export function HeroSection() {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:myrahmd85@gmail.com"
             className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="Email"
           >
