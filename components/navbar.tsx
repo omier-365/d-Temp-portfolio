@@ -16,8 +16,13 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold text-foreground">
-          <span className="text-primary">Dev</span>Portfolio
+        <a href="/" className="flex items-center gap-2 group">
+          <span className="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            EMIR
+          </span>
+          <span className="text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors">
+            Designer
+          </span>
         </a>
 
         {/* Desktop Navigation */}
