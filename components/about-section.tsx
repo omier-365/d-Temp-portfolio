@@ -72,13 +72,13 @@ export function AboutSection() {
             className="text-right"
             dir="rtl"
           >
-            <p className="text-xl text-foreground leading-relaxed mb-6">
+            <p className="text-xl text-foreground leading-relaxed mb-6 font-bold">
               نورت البورتفوليو عميلي العزيز <span className="text-red-500">❤️</span> احب اعرفك بنفسي
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-bold">
               انا <span className="text-primary font-bold">Graphic Designer</span> عندي 16 سنة، شغوف بصناعة تصاميم عصرية تلفت الانتباه وتسيب انطباع قوي.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-lg leading-relaxed font-bold">
               بحب الدمج بين الإبداع والبساطة علشان أطلع شغل يبان احترافي ومميز في كل تفصيلة.
             </p>
           </motion.div>
@@ -99,8 +99,8 @@ export function AboutSection() {
                   <skill.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">{skill.title}</h3>
-                  <p className="text-muted-foreground text-sm">{skill.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-foreground">{skill.title}</h3>
+                  <p className="text-muted-foreground text-sm font-semibold">{skill.description}</p>
                 </div>
               </div>
             </motion.div>

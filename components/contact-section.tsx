@@ -62,7 +62,7 @@ export function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-bold">
             Have a project in mind or want to collaborate? Feel free to reach out!
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-semibold mb-6 text-foreground">Contact Info</h3>
+            <h3 className="text-xl font-bold mb-6 text-foreground">Contact Info</h3>
             
             <div className="space-y-4">
               <a 
@@ -85,8 +85,8 @@ export function ContactSection() {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground font-medium">myrahmd860@gmail.com</p>
+                  <p className="text-sm text-muted-foreground font-bold">Email</p>
+                  <p className="text-foreground font-bold">myrahmd860@gmail.com</p>
                 </div>
               </a>
               
@@ -100,8 +100,8 @@ export function ContactSection() {
                   <MessageCircle className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">WhatsApp</p>
-                  <p className="text-foreground font-medium">+20 102 263 9193</p>
+                  <p className="text-sm text-muted-foreground font-bold">WhatsApp</p>
+                  <p className="text-foreground font-bold">+20 102 263 9193</p>
                 </div>
               </a>
               
@@ -115,8 +115,8 @@ export function ContactSection() {
                   <Briefcase className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Behance Portfolio</p>
-                  <p className="text-foreground font-medium">View My Work</p>
+                  <p className="text-sm text-muted-foreground font-bold">Behance Portfolio</p>
+                  <p className="text-foreground font-bold">View My Work</p>
                 </div>
               </a>
             </div>
@@ -131,7 +131,7 @@ export function ContactSection() {
             className="space-y-4"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="name" className="block text-sm font-bold text-foreground mb-2">
                 Name
               </label>
               <input
@@ -147,7 +147,7 @@ export function ContactSection() {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="email" className="block text-sm font-bold text-foreground mb-2">
                 Email
               </label>
               <input
@@ -163,7 +163,7 @@ export function ContactSection() {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="message" className="block text-sm font-bold text-foreground mb-2">
                 Message
               </label>
               <textarea
@@ -179,7 +179,7 @@ export function ContactSection() {
             </div>
 
             {error && (
-              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600 text-sm">
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600 text-sm font-bold">
                 {error}
               </div>
             )}
@@ -187,7 +187,7 @@ export function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-all hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg transition-all hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 "Sending..."

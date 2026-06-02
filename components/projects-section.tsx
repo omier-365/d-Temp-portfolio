@@ -7,7 +7,7 @@ import { useState } from "react"
 
 const projects = [
   {
-    title: "Teachers Designs",
+    title: "Teacher Designs",
     description: "Professional teacher profile designs with modern styling and creative layouts. Perfect for educational professionals.",
     tech: ["Design", "UI/UX", "Professional"],
     image: "/projects/1.png",
@@ -15,28 +15,12 @@ const projects = [
     isDesign: true,
   },
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    tech: ["Next.js", "TypeScript", "Prisma", "Stripe"],
-    image: "/projects/ecommerce.jpg",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "Task Management App",
-    description: "A collaborative task management tool with real-time updates, team features, and analytics.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
-    image: "/projects/taskapp.jpg",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "AI Content Generator",
-    description: "An AI-powered content generation tool that helps create blog posts, social media content, and more.",
-    tech: ["Next.js", "OpenAI", "Tailwind", "Vercel"],
-    image: "/projects/ai-content.jpg",
-    github: "https://github.com",
-    demo: "https://example.com",
+    title: "Social Media Projects",
+    description: "Engaging social media content designs and campaigns. Creative visuals that capture attention and drive engagement.",
+    tech: ["Social Media", "Content Design", "Creative"],
+    image: "/projects/social-media.jpg",
+    behance: "https://www.behance.net/89e5bf1f",
+    isDesign: true,
   },
 ]
 
@@ -57,7 +41,7 @@ export function ProjectsSection() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Featured <span className="text-primary">Projects</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto font-semibold">
               Here are some of my recent projects that showcase my skills and experience.
             </p>
           </motion.div>
@@ -94,14 +78,14 @@ export function ProjectsSection() {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 font-semibold">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs bg-primary/10 text-primary rounded"
+                        className="px-2 py-1 text-xs bg-primary/10 text-primary rounded font-semibold"
                       >
                         {tech}
                       </span>
@@ -114,7 +98,7 @@ export function ProjectsSection() {
                         href={project.behance}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-bold"
                       >
                         <ExternalLink className="w-4 h-4" />
                         View on Behance
@@ -125,7 +109,7 @@ export function ProjectsSection() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-semibold"
                         >
                           <ExternalLink className="w-4 h-4" />
                           Code
@@ -134,7 +118,7 @@ export function ProjectsSection() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-semibold"
                         >
                           <ExternalLink className="w-4 h-4" />
                           Demo

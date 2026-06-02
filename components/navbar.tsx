@@ -20,7 +20,7 @@ export function Navbar() {
           <span className="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             EMIR
           </span>
-          <span className="text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors">
+          <span className="text-sm font-bold text-primary/80 group-hover:text-primary transition-colors">
             Designer
           </span>
         </a>
@@ -31,7 +31,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors font-bold"
               >
                 {link.label}
               </a>
@@ -40,7 +40,7 @@ export function Navbar() {
           <li>
             <a
               href="#contact"
-              className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all hover:shadow-glow font-medium"
+              className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all hover:shadow-glow font-bold"
             >
               Hire Me
             </a>
@@ -72,7 +72,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-muted-foreground hover:text-primary transition-colors font-medium"
+                    className="block text-muted-foreground hover:text-primary transition-colors font-bold"
                   >
                     {link.label}
                   </a>
@@ -82,7 +82,7 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all text-center font-medium"
+                  className="block px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all text-center font-bold"
                 >
                   Hire Me
                 </a>

@@ -40,7 +40,7 @@ export function HeroSection() {
           transition={{ delay: 0.2 }}
           className="text-4xl md:text-5xl font-bold mb-8 text-balance"
         >
-          <span className="text-primary">مرحبا عميلي العزيز</span>
+          <span className="text-primary font-bold">مرحبا عميلي العزيز</span>
           <span className="ml-3 inline-block">❤️</span>
         </motion.h1>
         
@@ -50,10 +50,10 @@ export function HeroSection() {
           transition={{ delay: 0.3 }}
           className="space-y-4 mb-8"
         >
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-bold">
             احب تحويل افكار عملائي الى مشاريع موجودة على ارض الواقع
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-bold">
             سايبلك نموذج التواصل تحت 👇
           </p>
         </motion.div>
@@ -66,13 +66,13 @@ export function HeroSection() {
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-all hover:shadow-glow"
+            className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg transition-all hover:shadow-glow"
           >
             عرض أعمالي
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-border hover:border-primary text-foreground font-medium rounded-lg transition-all"
+            className="px-8 py-3 border border-border hover:border-primary text-foreground font-bold rounded-lg transition-all"
           >
             تواصل معي
           </a>
@@ -123,7 +123,7 @@ export function HeroSection() {
           className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
           aria-label="Scroll down"
         >
-          <span className="text-sm mb-2">اسحب لأسفل</span>
+          <span className="text-sm mb-2 font-bold">اسحب لأسفل</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
